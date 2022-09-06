@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Bootstrap Simple Login Form</title>
+<link rel="stylesheet" href="../pubilc/css/bootstrap.min.css">
+<script src="../pubilc/css/bootstrap.min.js"></script>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark" aria-label="First navbar example">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Never expand</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample01">
+        <ul class="navbar-nav me-auto mb-2">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <%if (status == "loggedin") {%>
+            <li class="nav-item">
+              <a class="nav-link" href="/profile">profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/api/logout">logout</a>
+            </li>
+
+          <%} else {%>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/register">register</a>
+          </li>
+        <%}%>
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+
+    <div class="card" style="width: 100%;">
+        <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card-body">
+          <%if (status == "loggedin") {%>
+          <h5 class="card-title">welcome to the site <%= user.email %> </h5>
+          <%} else {%>
+            <h5 class="card-title">welcome to the site please kindly login </h5>
+            <%}%>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <button type="submit" class="btn btn-primary btn-block">
+            <a href="./register">Registration</a>
+          </button>
+          <button type="submit" class="btn btn-primary btn-block">
+            <a href="./login">Sign in</a>
+          </button>
+        </div>
+      </div>
+</body>
+</html>
