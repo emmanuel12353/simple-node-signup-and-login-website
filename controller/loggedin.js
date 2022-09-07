@@ -14,3 +14,4 @@ const loggedIn = (req, res, next) => {
 if (err) return next()
     }
 }
+module.exports = loggedIn;
